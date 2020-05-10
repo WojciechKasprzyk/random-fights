@@ -1,0 +1,10 @@
+<mat-card class="flex--column mbottom10">
+  <label>What do you count on?</label>
+  <mat-radio-group
+    class="flex--column p10"
+    [(ngModel)]="chosenType">
+    <mat-radio-button class="p5" *ngFor="let type of types" [value]="type">
+      {{type}}
+    </mat-radio-button>
+  </mat-radio-group>
+</mat-card>
