@@ -1,0 +1,8 @@
+.score-table {
+  color: white;
+  font-weight: bold;
+  font-size: 70px;
+  &>p {
+    padding: 10px;
+  }
+}

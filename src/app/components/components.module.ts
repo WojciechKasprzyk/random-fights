@@ -4,17 +4,22 @@ import { PersonCardComponent } from './person-card/person-card.component';
 import { MatButtonModule, MatCardModule, MatRadioModule } from '@angular/material';
 import { SettingsFormComponent } from './settings-form/settings-form.component';
 import { FormsModule } from '@angular/forms';
+import { ScoreTableComponent } from './score-table/score-table.component';
 
+
+const EXPORT_COMPONENTS = [
+  PersonCardComponent,
+  SettingsFormComponent,
+  ScoreTableComponent
+];
 
 
 @NgModule({
   declarations: [
-    PersonCardComponent,
-    SettingsFormComponent
+    ...EXPORT_COMPONENTS
   ],
   exports: [
-    PersonCardComponent,
-    SettingsFormComponent
+    ...EXPORT_COMPONENTS
   ],
   imports: [
     CommonModule,
