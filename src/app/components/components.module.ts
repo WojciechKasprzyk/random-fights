@@ -5,21 +5,23 @@ import { MatButtonModule, MatCardModule, MatRadioModule } from '@angular/materia
 import { SettingsFormComponent } from './settings-form/settings-form.component';
 import { FormsModule } from '@angular/forms';
 import { ScoreTableComponent } from './score-table/score-table.component';
+import { PersonPropertiesPipe } from './person-card/person-properties.pipe';
 
 
 const EXPORT_COMPONENTS = [
   PersonCardComponent,
   SettingsFormComponent,
-  ScoreTableComponent
+  ScoreTableComponent,
 ];
 
 
 @NgModule({
   declarations: [
-    ...EXPORT_COMPONENTS
+    ...EXPORT_COMPONENTS,
+    PersonPropertiesPipe
   ],
   exports: [
-    ...EXPORT_COMPONENTS
+    ...EXPORT_COMPONENTS,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,9 @@ const EXPORT_COMPONENTS = [
     MatButtonModule,
     MatRadioModule,
     FormsModule
+  ],
+  providers: [
+    PersonPropertiesPipe
   ]
 })
 export class ComponentsModule { }
