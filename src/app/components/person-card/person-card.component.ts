@@ -3,7 +3,6 @@ import { SwapiApiService } from '../../services/swapi-api.service';
 import { PersonDto } from '../../dots/person.dto';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-person-card',
@@ -13,13 +12,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class PersonCardComponent implements OnInit, OnDestroy {
   person: PersonDto;
-  drawn = false;
   readonly excludedProperties = ['name', 'mass'];
+  readonly imageUrl = '../../../assets/default_person.jpg';
 
   private ngUnsubscribe = new Subject();
 
   constructor(
-    private _sanitizer: DomSanitizer,
     private cdr: ChangeDetectorRef,
     private swapiApiService: SwapiApiService) { }
 
@@ -28,7 +26,6 @@ export class PersonCardComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe((person: PersonDto) => {
         this.person = person;
-        this.drawn = true;
         this.cdr.detectChanges();
       });
   }

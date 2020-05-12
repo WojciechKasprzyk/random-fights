@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { SwapiApiService } from './services/swapi-api.service';
+import { SettingsFormComponent } from './components/settings-form/settings-form.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,9 @@ import { SwapiApiService } from './services/swapi-api.service';
 })
 export class AppComponent implements OnInit {
   title = 'random-fights';
-  playedAlready = false;
+  playedAlready = false
+
+  @ViewChild(SettingsFormComponent) settings: SettingsFormComponent;
 
   constructor(private swapiApiService: SwapiApiService) {}
 

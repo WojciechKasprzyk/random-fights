@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-header *ngIf="data">
+    <mat-card-title>
+<!--      TODO: check it-->
+      {{data.name}}
+    </mat-card-title>
+    <mat-card-subtitle>
+<!--      TODO: change it-->
+      mass: {{data.mass}}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img *ngIf="imageUrl" mat-card-image [src]="imageUrl">
+  <mat-card-content>
+    <div *ngFor="let prop of data | keyvalue">
+      <ng-container *ngIf="!excludedProperties.includes(prop.key)">
+        <span class="label">{{prop.key}}: </span>
+        <span class="p5" [innerHTML]="prop.value | personProperties:prop.key"></span>
+      </ng-container>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button
+            (click)="getDate.emit()">
+      Draw
+    </button>
+  </mat-card-actions>
+</mat-card>

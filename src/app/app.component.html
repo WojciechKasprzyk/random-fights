@@ -1,11 +1,16 @@
 <div class="flex--column">
   <app-settings-form></app-settings-form>
   <div class="flex--space-between">
-    <app-person-card></app-person-card>
+    <ng-container *ngIf="settings.chosenType === 'person'; else starship">
+      <app-person-card></app-person-card>
+      <app-person-card></app-person-card>
+    </ng-container>
+    <ng-template #starship>
+      <app-starship-card></app-starship-card>
+      <app-starship-card></app-starship-card>
+    </ng-template>
     <app-score-table *ngIf="playedAlready"></app-score-table>
-    <app-person-card></app-person-card>
   </div>
-
   <button mat-raised-button
           (click)="play()"
           class="battle-button">
