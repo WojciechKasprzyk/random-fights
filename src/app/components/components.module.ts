@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PersonCardComponent } from './person-card/person-card.component';
-import { MatButtonModule, MatCardModule, MatRadioModule } from '@angular/material';
 import { SettingsFormComponent } from './settings-form/settings-form.component';
 import { FormsModule } from '@angular/forms';
 import { ScoreTableComponent } from './score-table/score-table.component';
 import { PersonPropertiesPipe } from './person-card/person-properties.pipe';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 const EXPORT_COMPONENTS = [
