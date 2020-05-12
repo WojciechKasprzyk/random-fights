@@ -2,9 +2,13 @@
   <app-settings-form></app-settings-form>
   <div class="flex--space-between">
     <app-person-card></app-person-card>
-    <app-score-table></app-score-table>
+    <app-score-table *ngIf="playedAlready"></app-score-table>
     <app-person-card></app-person-card>
   </div>
 
-  <button mat-raised-button class="battle-button">SHARE</button>
+  <button mat-raised-button
+          (click)="play()"
+          class="battle-button">
+    {{playedAlready ? 'PLAY AGAIN' : 'PLAY'}}
+  </button>
 </div>
