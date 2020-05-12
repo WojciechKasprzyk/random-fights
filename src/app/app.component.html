@@ -1,7 +1,7 @@
 <div class="flex--column">
   <app-settings-form></app-settings-form>
   <div class="flex--space-between">
-    <ng-container *ngIf="settings.chosenType === 'person'; else starship">
+    <ng-container *ngIf="settings?.chosenType === 'person'; else starship">
       <app-person-card></app-person-card>
       <app-person-card></app-person-card>
     </ng-container>

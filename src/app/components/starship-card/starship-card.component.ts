@@ -14,7 +14,7 @@ import { Subject } from 'rxjs';
 export class StarshipCardComponent implements OnInit, OnDestroy {
   starship: StarshipDto;
   readonly excludedProperties = ['name', 'crew'];
-  readonly imageUrl = '../../../assets/default_starship.jpg';
+  readonly imageUrl = '../../../assets/default_starship.png';
 
   private ngUnsubscribe = new Subject();
 
